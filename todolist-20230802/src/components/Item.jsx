@@ -1,4 +1,4 @@
-import { MdDelete, MdDone } from 'react-icons/md'
+import { MdClose, MdDelete, MdDone } from 'react-icons/md'
 import { css, styled } from 'styled-components'
 import { useDispatch } from '../Context'
 
@@ -76,7 +76,7 @@ const Item = ({ id, done, text }) => {
   return (
     <>
       <button type="button" done={done} onClick={onToggle}>
-        {done && <MdDone />}
+        {done ? <MdDone /> : <MdClose />}
       </button>
       <text done={done}>{text}</text>
       <button type="button" onClick={onRemove}>
